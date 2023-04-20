@@ -68,7 +68,7 @@ $categoryStories6 = Story::findAllLimit(2,20);
                     <div class="image">
                         <img src= "<?= $story->images ?>">
                     </div>
-                    <h1><?=$story->heading ?></h1>
+                    <a href="article.php?id=<?= $story->id?> "> <h1><?=$story->heading ?></h1> </a>
                     <p>
                         <?= substr($story->article,0,200); ?>
                     </p>
