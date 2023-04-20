@@ -91,7 +91,7 @@ $categoryStories6 = Story::findAllLimit(2,20);
         </div>
 
         <div class="width-12">
-            <h5>OLD HOLLYWOOD BOOK CLUB</h5>
+            <h3>POLITICS</h3>
         </div>
 
                 <?php
