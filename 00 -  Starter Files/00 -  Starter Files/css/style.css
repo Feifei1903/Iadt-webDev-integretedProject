@@ -1,0 +1,62 @@
+.container{
+    background-color: white;
+}
+
+h3, h4, h5 {
+    margin: 0px;
+}
+
+h1{
+    font-family: 'Bodoni Moda', serif;
+    line-height: 1.2em;
+    margin-bottom: 10px;
+}
+
+h4{
+    font-family: 'Roboto Condensed', sans-serif;
+    border-top: 2px solid black;
+    padding-top: 5px;
+}
+
+p{
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+.miniStory {
+    border-bottom: 2px solid #dadada86;
+    margin-bottom: 24px;
+}
+
+.miniStory h5 {
+    border-bottom: 1px solid red;
+}
+
+.topStory .image{
+    margin-top: 0px;
+    border-bottom: 2px solid #dadada86;
+}
+
+.topStory .content h3{
+    font-family: 'Bodoni Moda', serif;
+}
+
+.topStory .content p{
+    margin-top: 10px;
+    border-bottom: 2px solid #dadada86;
+}
+
+.story{
+    display: flex;
+    gap: 10px;
+}
+
+.headings{
+    display: flex;
+}
+
+.headings h3{
+    font-family: 'Playfair Display', serif;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #dadada86;
+}
