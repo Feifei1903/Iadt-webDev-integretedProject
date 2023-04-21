@@ -6,9 +6,9 @@
 require_once "./classes/Category.php";
 require_once "./classes/Story.php";
 
-$topStory = Story::findAllLimit(1,5);
-$miniStories = Story::findAllLimit(4,1);
-$leftStories = Story::findAllLimit(2,18);
+$topStory = Story::findAllLimit(1,2);
+$miniStories = Story::findAllLimit(4,3);
+$leftStories = Story::findAllLimit(2,0);
 $shortStories = Story::findAllLimit(4,9);
 $topStory2 = Story::findAllLimit(1,9);
 $rightStories = Story::findAllLimit(2,7);
