@@ -10,8 +10,9 @@ $topStory = Story::findAllLimit(1,2);
 $miniStories = Story::findAllLimit(4,3);
 $leftStories = Story::findAllLimit(2,0);
 $shortStories = Story::findAllLimit(4,7);
-$topStory2 = Story::findAllLimit(1,9);
-$rightStories = Story::findAllLimit(2,7);
+$topStory2 = Story::findAllLimit(1,11);
+$rightStories = Story::findAllLimit(2,12);
+$rightStories2 = Story::findAllLimit(2,14);
 $categoryStories1 = Story::findAllLimit(2,10);
 $categoryStories2 = Story::findAllLimit(2,12);
 $categoryStories3 = Story::findAllLimit(2,14);
@@ -122,7 +123,7 @@ $categoryStories6 = Story::findAllLimit(2,20);
                 foreach ($topStory2 as $story) { ?>
                 <div class="content">
                     <div class="image">
-                        <img src= "<?= $story->images ?>">
+                        <img src= "<?= $story->images ?>" width="560" height="330">
                     </div>
                     <h1><?=$story->heading ?></h1>
                     <p>
@@ -154,14 +155,14 @@ $categoryStories6 = Story::findAllLimit(2,20);
         <div class="width-3">
             <div class="topStory">
                 <?php
-                    foreach ($rightStories as $story) { ?>
+                    foreach ($rightStories2 as $story) { ?>
                     <div class="content">
                         <div class="image">
                             <img src= "<?= $story->images ?>" width="280" height="160">
                         </div>
                         <h3><?=$story->heading ?></h3>
                         <p>
-                            <?= substr($story->article,0,200); ?>
+                            <?= substr($story->article,0,180); ?>
                         </p>
                     </div>
                 <?php } ?> 
