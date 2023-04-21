@@ -9,7 +9,7 @@ require_once "./classes/Story.php";
 $topStory = Story::findAllLimit(1,2);
 $miniStories = Story::findAllLimit(4,3);
 $leftStories = Story::findAllLimit(2,0);
-$shortStories = Story::findAllLimit(4,9);
+$shortStories = Story::findAllLimit(4,7);
 $topStory2 = Story::findAllLimit(1,9);
 $rightStories = Story::findAllLimit(2,7);
 $categoryStories1 = Story::findAllLimit(2,10);
@@ -105,7 +105,7 @@ $categoryStories6 = Story::findAllLimit(2,20);
                                     </div>
                                     <h3><?=$story->heading ?></h3>
                                     <p>
-                                        <?= substr($story->article,0,200); ?>
+                                        <?= substr($story->article,0,156); ?>
                                     </p>
                                 </div>
                                 </div>
