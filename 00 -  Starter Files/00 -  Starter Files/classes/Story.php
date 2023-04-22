@@ -113,7 +113,36 @@ class Story {
 
     
     public static function findById($id) {
- 
-    }
+        $stories = null;
+        try{
+            $db = new DB();
+            $conn = $db->open();
 
+            $sql = "SELECT * FROM stories WHERE id = :id ";
+            $params = [
+                ":id" => $id
+            ];
+            $stmt = $conn->prepare($sql);
+            $status = $stmt->execute($params);
+
+            if(!$status){
+                $error_info = $stmt->errorInfo();
+                $message = 
+                    "SQLSTATE error code = " . $error_info[0] .
+                    "; error message = ".$error_info[2];
+                throw new Exception($message);
+            }
+
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            if ($row !== FALSE){
+                $stories = new Story($row);
+            }
+        }
+        finally {
+            if ($db !== null && $db ->isOpen()){
+                $db->close();
+            }
+        }
+        return $stories;
+    }
 }
