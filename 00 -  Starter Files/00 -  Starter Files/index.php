@@ -7,18 +7,18 @@ require_once "./classes/Category.php";
 require_once "./classes/Story.php";
 
 $topStory = Story::findAllLimit(1,2);
+$topStory = Story::findById(1);
 $miniStories = Story::findAllLimit(4,3);
 $leftStories = Story::findAllLimit(2,0);
 $shortStories = Story::findAllLimit(4,7);
 $topStory2 = Story::findAllLimit(1,11);
 $rightStories = Story::findAllLimit(2,12);
 $rightStories2 = Story::findAllLimit(2,14);
-$categoryStories1 = Story::findAllLimit(2,16);
-$categoryStories2 = Story::findAllLimit(2,18);
-$categoryStories3 = Story::findAllLimit(2,14);
-$categoryStories4 = Story::findAllLimit(2,16);
-$categoryStories5 = Story::findAllLimit(2,18);
-$categoryStories6 = Story::findAllLimit(2,20);
+$categoryStories1 = Story::findAllLimit(4,16);
+$categoryStories2 = Story::findAllLimit(4,20);
+$categoryStories3 = Story::findAllLimit(4,24);
+$categoryStories4 = Story::findAllLimit(4,28);
+
 
 ?>
 
@@ -171,24 +171,14 @@ $categoryStories6 = Story::findAllLimit(2,20);
 
         <div class="width-3">
             <h4>EDUCATION</h4>
-            <div class="image">
-                <img src="images/news images/education.PNG">
-            </div>
+                <div class="image">
+                    <img src="images/news images/education.webp">
+                </div>
 
             <div class="headings">
                 <div class="heading">
                 <?php
                     foreach ($categoryStories1 as $story) { ?>
-                    <h3><?= $story->heading ?>
-                    </h3>
-
-                <?php } ?>
-                </div>
-            </div>
-            <div class="headings">
-                <div class="heading">
-                <?php
-                    foreach ($categoryStories2 as $story) { ?>
                     <h3><?= $story->heading ?>
                     </h3>
 
@@ -206,19 +196,10 @@ $categoryStories6 = Story::findAllLimit(2,20);
             <div class="headings">
                 <div class="heading">
                 <?php
-                    foreach ($categoryStories3 as $story) { ?>
+                    foreach ($categoryStories2 as $story) { ?>
                     <h3><?= $story->heading ?>
                     </h3>
 
-                <?php } ?>
-                </div>
-            </div>
-            <div class="headings">
-                <div class="heading">
-                <?php
-                    foreach ($categoryStories4 as $story) { ?>
-                    <h3><?= $story->heading ?>
-                    </h3>
                 <?php } ?>
                 </div>
             </div>
@@ -233,17 +214,7 @@ $categoryStories6 = Story::findAllLimit(2,20);
             <div class="headings">
                 <div class="heading">
                 <?php
-                    foreach ($categoryStories5 as $story) { ?>
-                    <h3><?= $story->heading ?>
-                    </h3>
-
-                <?php } ?>
-                </div>
-            </div>
-            <div class="headings">
-                <div class="heading">
-                <?php
-                    foreach ($categoryStories6 as $story) { ?>
+                    foreach ($categoryStories3 as $story) { ?>
                     <h3><?= $story->heading ?>
                     </h3>
 
@@ -260,17 +231,12 @@ $categoryStories6 = Story::findAllLimit(2,20);
 
             <div class="headings">
                 <div class="heading">
-                    <h3>Former UCLA lecturer accused of making violent threats ruled mentally unfit to stand trial
+                <?php
+                    foreach ($categoryStories4 as $story) { ?>
+                    <h3><?= $story->heading ?>
                     </h3>
 
-                    <h3>Former UCLA lecturer accused of making violent threats ruled mentally unfit to stand trial</h3>
-                </div>
-            </div>
-            <div class="headings">
-                <div class="heading">
-                    <h3>Former UCLA lecturer accused of making violent threats ruled mentally unfit to stand trial
-                    </h3>
-                    <h3>Former UCLA lecturer accused of making violent threats ruled mentally unfit to stand trial</h3>
+                <?php } ?>
                 </div>
             </div>
         </div>
