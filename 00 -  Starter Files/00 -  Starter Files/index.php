@@ -38,13 +38,12 @@ $categoryStories4 = Story::findAllLimit(4,28);
 </head>
 
 <body>
-    <div class="container">
-
-    <div class="width-12">
+<div class="width-12">
         <div class="header">
             <h1>NEWS WORLD</h1>
         </div>
     </div>
+    <div class="container">
 
         <div class="width-12">
             <h5>CELEBRITIES</h5>
@@ -130,7 +129,7 @@ $categoryStories4 = Story::findAllLimit(4,28);
                     </div>
                     <a href="article.php?id=<?= $topStory2->id?> "> <h1><?=$topStory2->heading ?></h1> </a>
                     <p>
-                        <?= substr($topStory2->article,0,200); ?>
+                        <?= substr($topStory2->article,0,380); ?>
                     </p>
                     <h5>BY <?=$topStory2->author ?></h5>
                 </div>
@@ -174,7 +173,7 @@ $categoryStories4 = Story::findAllLimit(4,28);
 
         <div class="width-3">
             <h4>EDUCATION</h4>
-                <div class="image">
+                <div class="image1">
                     <img src="images/news images/education.webp">
                 </div>
 

@@ -3,11 +3,13 @@
 }
 
 .header{
-    background-color: black;
     text-align: center;
+    margin-top: 15px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
-h3, h4 {
+h3 {
     margin: 0px;
 }
 
@@ -18,11 +20,12 @@ h5 {
 h1{
     font-family: 'Bodoni Moda', serif;
     line-height: 1.2em;
-    margin-bottom: 10px;
+    margin: 5px;
 }
 
 h4{
     font-family: 'Roboto Condensed', sans-serif;
+    margin: 15px 0px 15px;
     border-top: 2px solid black;
     padding-top: 5px;
 }
@@ -50,7 +53,7 @@ p{
 }
 
 .topStory .content p{
-    margin-top: 10px;
+    margin-top: 10px 0px 10px;
     border-bottom: 2px solid #dadada86;
 }
 
@@ -65,7 +68,13 @@ p{
 
 .headings h3{
     font-family: 'Playfair Display', serif;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 12px;
+    margin-bottom: 0px;
+    padding-bottom: 12px;
     border-bottom: 2px solid #dadada86;
+}
+
+.image1{
+    margin-bottom: 20px;
+  
 }
