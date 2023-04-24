@@ -1,4 +1,7 @@
 <?php
+
+require_once "./classes/DB.php";
+
 class Story {
 
     public $id;
@@ -77,7 +80,6 @@ class Story {
         try {
             $db = new DB();
             $conn = $db->open();
-  //          $conn = $db->getConnection();
 
             $sql = "SELECT * FROM stories LIMIT :lim OFFSET :off";
             $stmt = $conn->prepare($sql);

@@ -2,8 +2,17 @@
     background-color: white;
 }
 
-h3, h4, h5 {
+.header{
+    background-color: black;
+    text-align: center;
+}
+
+h3, h4 {
     margin: 0px;
+}
+
+h5 {
+    margin: 5px;
 }
 
 h1{

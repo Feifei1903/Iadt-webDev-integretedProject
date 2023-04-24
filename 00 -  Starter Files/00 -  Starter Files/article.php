@@ -1,26 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <?php
-require_once "./etc/config.php";
-$id = $_GET["id"];
-$mainStory = Story::findById($_GET["id"]);
+
+require_once "./classes/Story.php";
+
+try{
+
+    if ($_SERVER["REQUEST_METHOD"] !== "GET") {
+        throw new Exception("Invalid request method");
+    }
+    if (!array_key_exists('id', $_GET)) {
+        throw new Exception("Invalid request--missing id");
+    }
+    $id = $_GET['id'];
+    $story = Story::findById($id);
+    if ($story === null) {
+        throw new Exception("Invalid request--unknown id");
+    }
+}
+catch (Exception $ex) {
+    die($ex->getMessage());
+}
 ?>
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-     foreach ($topStory as $story) { ?>
          <div class="content">
+         <h2><?=$story->heading ?></h2> 
              <div class="image">
-                 <img src= "<?= $story->images ?>">
+                 <img src= "<?= $story->images ?>" width="720" height="450">
              </div>
-             <a href="article.php?id=<?= $story->id?> "> <h1><?=$story->heading ?></h1> </a>
-             <p>
-              <?= substr($story->article,0,200); ?>
-             </p>
              <h5>BY <?=$story->author ?></h5>
+             <p>
+              <?= substr($story->article,0,1500); ?>
+             </p>
          </div>
-<h3><?=$mainStory->article ?></h3>
-<?php } ?>
 
 </head>
+</html>

@@ -7,18 +7,18 @@ require_once "./classes/Category.php";
 require_once "./classes/Story.php";
 
 $topStory = Story::findAllLimit(1,2);
-$topStory = Story::findById(1);
+$topStory = Story::findById(3);
 $miniStories = Story::findAllLimit(4,3);
 $leftStories = Story::findAllLimit(2,0);
 $shortStories = Story::findAllLimit(4,7);
 $topStory2 = Story::findAllLimit(1,11);
+$topStory2 = Story::findById(12);
 $rightStories = Story::findAllLimit(2,12);
 $rightStories2 = Story::findAllLimit(2,14);
 $categoryStories1 = Story::findAllLimit(4,16);
 $categoryStories2 = Story::findAllLimit(4,20);
 $categoryStories3 = Story::findAllLimit(4,24);
 $categoryStories4 = Story::findAllLimit(4,28);
-
 
 ?>
 
@@ -40,6 +40,12 @@ $categoryStories4 = Story::findAllLimit(4,28);
 <body>
     <div class="container">
 
+    <div class="width-12">
+        <div class="header">
+            <h1>NEWS WORLD</h1>
+        </div>
+    </div>
+
         <div class="width-12">
             <h5>CELEBRITIES</h5>
         </div>
@@ -50,7 +56,7 @@ $categoryStories4 = Story::findAllLimit(4,28);
                     foreach ($leftStories as $story) { ?>
                     <div class="content">
                         <div class="image">
-                            <img src= "<?= $story->images ?>" width="280" height="160">
+                                <img src= "<?= $story->images ?>" width="280" height="160">
                         </div>
                         <h3><?=$story->heading ?></h3>
                         <p>
@@ -63,19 +69,18 @@ $categoryStories4 = Story::findAllLimit(4,28);
 
         <div class="width-6">
             <div class="topStory">
-                <?php
-                foreach ($topStory as $story) { ?>
+                
                 <div class="content">
                     <div class="image">
-                        <img src= "<?= $story->images ?>">
+                        <img src= "<?= $topStory->images; ?>" width="650" height="340">
                     </div>
-                    <a href="article.php?id=<?= $story->id?> "> <h1><?=$story->heading ?></h1> </a>
+                    <a href="article.php?id=<?= $topStory->id?> "> <h1><?=$topStory->heading ?></h1> </a>
                     <p>
-                        <?= substr($story->article,0,200); ?>
+                        <?= substr($topStory->article,0,180); ?>
                     </p>
-                    <h5>BY <?=$story->author ?></h5>
+                    <h5>BY <?=$topStory->author ?></h5>
                 </div>
-                <?php } ?> 
+                
             </div>
         </div>
 
@@ -100,16 +105,16 @@ $categoryStories4 = Story::findAllLimit(4,28);
                     
                     <div class="width-3">
                         <div class="shortStory">
-                                <div class="content">
-                                    <div class="image">
-                                        <img src= "<?= $story->images ?>" width="280" height="160">
-                                    </div>
-                                    <h3><?=$story->heading ?></h3>
-                                    <p>
-                                        <?= substr($story->article,0,156); ?>
-                                    </p>
+                            <div class="content">
+                                <div class="image">
+                                    <img src= "<?= $story->images ?>" width="280" height="160">
                                 </div>
-                                </div>
+                                <h3><?=$story->heading ?></h3>
+                                <p>
+                                    <?= substr($story->article,0,156); ?>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 <?php } ?> 
         
@@ -119,19 +124,17 @@ $categoryStories4 = Story::findAllLimit(4,28);
 
         <div class="width-6">
             <div class="topStory">
-                <?php
-                foreach ($topStory2 as $story) { ?>
                 <div class="content">
                     <div class="image">
-                        <img src= "<?= $story->images ?>" width="560" height="330">
+                        <img src= "<?= $topStory2->images; ?>" width="620" height="350">
                     </div>
-                    <h1><?=$story->heading ?></h1>
+                    <a href="article.php?id=<?= $topStory2->id?> "> <h1><?=$topStory2->heading ?></h1> </a>
                     <p>
-                        <?= substr($story->article,0,200); ?>
+                        <?= substr($topStory2->article,0,200); ?>
                     </p>
-                    <h5>BY <?=$story->author ?></h5>
+                    <h5>BY <?=$topStory2->author ?></h5>
                 </div>
-                <?php } ?> 
+                
             </div>
         </div>
 
